@@ -1,13 +1,9 @@
-% ProjectHGR - Hand Gesture Recognizer Project
-% ----------------------------------------------------------------
-% FORMRESULTS Function - ProjectHGR
-% by Caglar Arslan and Okan Cilingiroglu
-%
+
 % input is the input(query) image
 % distRatio is the distance ratio parameter of SIFT
 % threshold is the threshold value for the MK-RoD
 % Selecteds specifies the selected database image for the process
-% ----------------------------------------------------------------
+
 function results=formResults(input, distRatio,threshold,Selecteds);
 % For details, investigate the MKRoDAlgorithm.jpg
 load theHGRDatabase;

@@ -1,15 +1,3 @@
-% ProjectHGR - Hand Gesture Recognizer Project
-% ----------------------------------------------------------------
-% EXECUTOR FILE for "Hand Gesture Recognizer Project" (Project-HGR)
-% Authors: Caglar Arslan and Okan Cilingiroglu
-% ----------------------------------------------------------------
-% Development History:
-% Algorithm Design : 02 May 2006 by Caglar Arslan
-% Implementation: 20 May 2006 by Caglar Arslan and Okan Cilingiroglu
-% Optimization : 24 May 2006 by Okan Cilingiroglu and Caglar Arslan
-% Documentation : 25 May 2006 by Caglar Arslan and Okan Cilingiroglu
-% Revision : 17 February 2011 by Caglar Arslan
-% ----------------------------------------------------------------
 
 % Clear and Close Everything
 close all
@@ -31,5 +19,5 @@ clc;
 
 % ----------------------------------------------------------------
 % Recognize the Sample
-input='Images/Inputs/sample/b.jpg';
+input='Images/Inputs/sample/b_sample_green.jpg';
 results=hgr(input);

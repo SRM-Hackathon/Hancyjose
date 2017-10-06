@@ -13,15 +13,6 @@ function y = isrgb1(x)
 %   Note that a four-dimensional array that contains multiple RGB
 %   images returns 0, not 1.
 %
-%   Class Support
-%   -------------
-%   A can be of class uint8, uint16, or double. If A is of 
-%   class logical it is considered not to be RGB.
-%
-%   See also ISBW, ISGRAY, ISIND.
-
-%   Copyright 1993-2003 The MathWorks, Inc.  
-%   $Revision: 1.15.4.2 $  $Date: 2003/08/23 05:52:55 $
 
 wid = sprintf('Images:%s:obsoleteFunction',mfilename);
 str1= sprintf('%s is obsolete and may be removed in the future.',mfilename);
