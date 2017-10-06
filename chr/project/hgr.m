@@ -104,7 +104,7 @@ for i=1:26
         outputImage=imread(dataBase(Selecteds(i),:));
         imshow(appendimages(outputImage,inputImage));
         title('Matched Database Image -versus- Input Image');
-        fprintf('Match Found: %c char.\n',StringArray(i));
+        fprintf('Match is Found: %c char.\n',StringArray(i));
     end
 end
 
