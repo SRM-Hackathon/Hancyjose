@@ -4,14 +4,14 @@
 % threshold is the threshold value for the MK-RoD
 % Selecteds specifies the selected database image for the process
 
-function res=formResults(input, distRatio,threshold,Selected);
+function res=formResults(input, distRatio,threshold,Selecteds);
 % For details, investigate the MKRoDAlgorithm.jpg
 load theHGRDatabase;
 
-for i=1:size(Selected,2)
-    if(i==Selected(i))
+for i=1:size(Selecteds,2)
+    if(i==Selecteds(i))
         % Match the images and get the matched keypoints' data
-        [match1,match2,cx1,cy1,cx2,cy2,num]  = match(dataBase(Selected(i),:), input, distRatio);
+        [match1,match2,cx1,cy1,cx2,cy2,num]  = match(dataBase(Selecteds(i),:), input, distRatio);
                 
         % If the number of Matched Keypoints are greater than 2, start the
         % algorithm
@@ -57,12 +57,12 @@ for i=1:size(Selected,2)
             distanceMaskSum=0;
         end
         % Store the results
-        res(i,1)=cx1; % X position of the database image's center point
-        res(i,2)=cy1; % Y position of the database image's center point
-        res(i,3)=cx2; % X position of the input(query) image's center point
-        res(i,4)=cy2; % Y position of the input(query) image's center point
-        res(i,5)=num; % Number of matched keypoints
-        res(i,6)=distanceMaskSum; % Number of valid matched keypoints
+        results(i,1)=cx1; % X position of the database image's center point
+        results(i,2)=cy1; % Y position of the database image's center point
+        results(i,3)=cx2; % X position of the input(query) image's center point
+        results(i,4)=cy2; % Y position of the input(query) image's center point
+        results(i,5)=num; % Number of matched keypoints
+        results(i,6)=distanceMaskSum; % Number of valid matched keypoints
         
         % Calculate the validity ratio of the keypoints simply by dividing
         % the valid matched keypoints by the matched keypoints.
@@ -72,8 +72,8 @@ for i=1:size(Selected,2)
         else
             validRatio=distanceMaskSum/num;
         end
-        res(i,7)=validRatio;
-        res(i,8)=i;
+        results(i,7)=validRatio;
+        results(i,8)=i;
 
 % Reset the parameters for the next iteration
         distanceRatio1=0;
@@ -82,6 +82,6 @@ for i=1:size(Selected,2)
         distanceMaskSum=0;
         
     else
-        res(i,:)=0;
+        results(i,:)=0;
     end
 end

@@ -1,16 +1,16 @@
 % This function returns the locations of the most 'depth' amount of maximum values and
 % stores the location information inside the 'Selecteds'  
 
-function Selecteds=findMax(results,depth)
-Selecteds=zeros(1,26);
+function Sel=findMax(res,depth)
+Sel=zeros(1,26);
 temp=1;
 
 for j=1:depth    
     if(temp~=0)
-        [temp, location]=max(results);
+        [temp, location]=max(res);
         if(temp~=0)
-            results(location)=0;
-            Selecteds(location)=location;
+            res(location)=0;
+            Sel(location)=location;
         end
     end
 end

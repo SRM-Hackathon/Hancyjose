@@ -103,8 +103,11 @@ for i=1:26
         inputImage=imread(input);
         outputImage=imread(dataBase(Selecteds(i),:));
         imshow(appendimages(outputImage,inputImage));
-        title('Matched Database Image -versus- Input Image');
-        fprintf('Match is Found: %c char.\n',StringArray(i));
+        title('Matched');
+        %fprintf('Match is Found: %c char.\n',StringArray(i));
+        %!notepad C:\project_op_text\text.txt
+        fileID = fopen('text.txt','w');
+        fprintf(fileID,'%c\n',StringArray(i));
     end
 end
 
