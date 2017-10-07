@@ -19,5 +19,5 @@ clc;
 
 % ----------------------------------------------------------------
 % Recognize the Sample
-in='Images/Inputs/sample/i_sample.jpg';
+in='Images/Inputs/sample/y_sample.jpg';
 results=hgr(in);

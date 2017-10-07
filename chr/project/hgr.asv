@@ -19,12 +19,6 @@ load theHGRDatabase
 % For accessing the path of 'B' character use dataBase(2,:).
 % Note that 2 denotes  the 2nd character in the alphabet(i.e. 'B').
 
-% ----------------------------------------------------------------
-% ----------------------------------------------------------------
-% THE ALGORITHM
-% For details of the overall mechanism of the algorithm, open the
-% AlgorithmOverall.jpg
-% ----------------------------------------------------------------
 % Step1) Initialize the critical parameters
 distRatio=0.65; %Distance Ratio for the SIFT Match methods. % default distRatio = 0.65
 threshold=0.035; % default threshold=0.035
@@ -108,6 +102,11 @@ for i=1:26
         %!notepad C:\project_op_text\text.txt
         fileID = fopen('text.txt','w');
         fprintf(fileID,'%c\n',StringArray(i));
+        fclose(fileID);
+        
+        %opens the notepad text file containing the text corresponding to
+        %the gesture
+        !notepad text.txt
     end
 end
 
